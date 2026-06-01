@@ -1,10 +1,10 @@
 <div align="center">
 
-# RaniBalls — 2D Physics Engine
+# RaniBalls 
 
-### Throw it, shake it, break the gravity.
+### — 2D Physics Engine
 
-*A 2D physics engine I built from scratch in TypeScript. No physics library. Just math.*
+*A 2D physics engine I built from scratch in TypeScript. Pure math.*
 
 <br>
 
