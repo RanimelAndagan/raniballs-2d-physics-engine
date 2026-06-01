@@ -26,9 +26,7 @@
 
 It's a little physics playground. Balls fall, bounce off the walls, smash into each other, and you can fling them around with your mouse. Then it gets out of hand: there's an earthquake button, you can flip gravity, drop a black hole, and blow everything up.
 
-The main thing I wanted was to actually build the physics myself instead of grabbing a library that does it for me. So all the gravity, the collisions, the bouncing, the throwing, I wrote all of it by hand. No physics engine under the hood. It's all just "move every ball a tiny bit, draw it, repeat 60 times a second."
-
-It started as one ball bouncing on the floor. Then I kept going "okay, but what if I add..." and didn't stop.
+The main thing I wanted was to actually build the physics myself instead of grabbing a library that does it for me. So all the gravity, the collisions, the bouncing, the throwing, I wrote all of it by hand. No physics engine.
 
 ---
 
