@@ -102,8 +102,7 @@ The easiest way is the Live Server extension in VS Code. If you edit the TypeScr
 
 ## 🎬 Video Demo
 
-![RaniBalls demo](cursor/ScreenRecording2026-06-01120731-ezgif.com-gif-maker)
-
+[![Watch the demo](https://img.youtube.com/vi/bFAP2jK22Tg/maxresdefault.jpg)](https://www.youtube.com/watch?v=bFAP2jK22Tg)
 ---
 
 <div align="center">
