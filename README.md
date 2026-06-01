@@ -24,9 +24,7 @@
 
 RaniBalls is a 2D physics playground I built to understand how physics engines actually work, by writing one myself instead of importing one.
 
-Every part of the simulation is hand-coded: gravity, collisions between balls, bouncing off walls, friction, mass, the throwing, the chaos. There's no physics library doing the heavy lifting. The whole thing runs on one idea that powers nearly every game ever made: every frame, about sixty times a second, move everything a little, draw it, and do it again.
-
-It started as a simple bouncing-ball demo. Then I kept asking "what if I added..." and didn't stop. Now you can fling balls around, trigger an earthquake, flip gravity, drop a black hole, and blow it all up.
+I'm early in my coding journey, so I leaned on AI as a learning tool for this project, mostly for explaining concepts I hadn't met yet and helping me figure out how to approach each step. I wrote, tested, broke, and fixed it myself, and made sure I understood each piece before moving on. The goal was never to copy-paste my way through, it was to actually learn how a physics engine works by building one.
 
 ---
 
