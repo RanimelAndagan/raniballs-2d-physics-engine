@@ -2,7 +2,7 @@
 
 # RaniBalls 
 
-### — 2D Physics Engine
+###  2D Physics Engine
 
 *A 2D physics engine I built from scratch in TypeScript. Pure math.*
 
