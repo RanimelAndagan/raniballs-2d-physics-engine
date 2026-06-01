@@ -53,9 +53,9 @@ I didn't plan all of this out. I built one piece, got it working, then added the
 
 The order kind of mattered, though. First I got the loop going, the move-draw-repeat thing that everything else sits on. Then basic gravity and bouncing off the walls, which was simple enough. The hard part was making the balls hit *each other*. Walls are easy, you just flip the direction. But ball-on-ball needed actual vector math: checking the distance between them, seeing if they overlap, then trading their speed. That's the part that took the longest, and that's where it stopped being a toy and started being a real engine.
 
-After that, the rest was kind of easy, because it's all the same trick. Earthquake, wind, black hole, explosion, they're all just "shove the balls in some direction." Once the base was solid, the fun stuff was cheap to add.
+After that, the rest was kind of easy. Once the base was solid, the fun stuff was cheap to add.
 
-The biggest thing I learned wasn't even a formula. It was this: build small, test it, *then* add the next thing. Every time I tried to do too much at once, something broke and I had no idea what.
+The biggest thing I learned wasn't even a formula. It was this: build small, test it, THEN add the next thing. Every time I tried to do too much at once, something broke and I had no idea what.
 
 ---
 
@@ -108,14 +108,6 @@ The easiest way is the Live Server extension in VS Code. If you edit the TypeScr
 ---
 
 <div align="center">
-
-**Made by Ranimel B. Andagan**
-
-Part builder, part finance nerd, full-time entrepreneur.
-
-[🌐 Live Demo](https://ranimelandagan.github.io/raniballs-2d-physics-engine/) &nbsp;·&nbsp; [💼 LinkedIn](#) &nbsp;·&nbsp; [📍 North Caloocan, PH]
-
-*No engine. Just math, really fast.*
 
 </div>
 Part builder, part finance nerd, full time entrepreneur!
