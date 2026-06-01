@@ -4,7 +4,7 @@
 
 ### Throw it, shake it, break the gravity.
 
-*A 2D physics engine I built from scratch in TypeScript. No game engine, no physics library. Just a canvas and a bunch of math running really fast.*
+*A 2D physics engine I built from scratch in TypeScript. No physics library. Just math.*
 
 <br>
 
@@ -22,7 +22,7 @@
 
 ---
 
-## What is this
+## ⁉️ What is this
 
 It's a little physics playground. Balls fall, bounce off the walls, smash into each other, and you can fling them around with your mouse. Then it gets out of hand: there's an earthquake button, you can flip gravity, drop a black hole, and blow everything up.
 
@@ -32,7 +32,7 @@ It started as one ball bouncing on the floor. Then I kept going "okay, but what 
 
 ---
 
-## What's in it
+## 🤔 What's in it
 
 - **Balls that hit each other** — not just the walls. They actually collide and knock each other around.
 - **Mass** — bigger balls are heavier, so they shove the small ones around way more than the other way around.
@@ -47,7 +47,7 @@ It started as one ball bouncing on the floor. Then I kept going "okay, but what 
 
 ---
 
-## How I built it
+## 🤖 How I built it
 
 I'm a beginner. I used AI along the way to explain stuff I hadn't learned yet and to help me figure out how to approach each part. But I wrote it, broke it, and fixed it myself, and I made sure I actually understood each piece before moving on. The AI was more like a tutor than autopilot. Building this is literally how I learned how a physics engine works, and that was the whole point.
 
@@ -61,7 +61,7 @@ The biggest thing I learned wasn't even a formula. It was this: build small, tes
 
 ---
 
-## Stuff I'd add later
+## 📲 Stuff I'd add later
 
 - **Stacking** — right now a big pile gets a little jittery. Real engines work hard to make stuff settle and rest properly.
 - **Other shapes** — boxes, and walls you can place. They need different collision math than circles.
@@ -70,7 +70,7 @@ The biggest thing I learned wasn't even a formula. It was this: build small, tes
 
 ---
 
-## Controls
+## 🎮 Controls
 
 > Heads up: update these to whatever keys I actually set in the code.
 
@@ -88,7 +88,7 @@ The biggest thing I learned wasn't even a formula. It was this: build small, tes
 
 ---
 
-## How to run it
+## 🏃‍♂️‍➡️ How to run it
 
 It's just a static site. The TypeScript is already compiled to JS, so it runs as-is:
 
