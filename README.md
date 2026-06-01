@@ -109,7 +109,6 @@ The easiest way is the Live Server extension in VS Code. If you edit the TypeScr
 
 <div align="center">
 
-</div>
 Part builder, part finance nerd, full time entrepreneur!
 
 [🌐 Live Demo](https://ranimelandagan.github.io/raniballs-2d-physics-engine/) &nbsp;·&nbsp; [💼 LinkedIn](#) &nbsp;·&nbsp; 
