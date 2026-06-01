@@ -8,11 +8,7 @@
 
 <br>
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Canvas](https://img.shields.io/badge/HTML5_Canvas-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![Web Audio API](https://img.shields.io/badge/Web_Audio_API-990000?style=for-the-badge)
-![No Frameworks](https://img.shields.io/badge/No_Frameworks-0d0d12?style=for-the-badge)
+[![My Skills](https://skillicons.dev/icons?i=ts,js,html)](https://skillicons.dev)
 
 <br>
 
