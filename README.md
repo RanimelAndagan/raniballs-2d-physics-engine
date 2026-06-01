@@ -2,7 +2,9 @@
 
 # RaniBalls — 2D Physics Engine
 
-### Cool ass, kick ass project
+### Throw it, shake it, break the gravity.
+
+*A 2D physics engine I built from scratch in TypeScript. No game engine, no physics library. Just a canvas and a bunch of math running really fast.*
 
 <br>
 
@@ -14,145 +16,116 @@
 
 <br>
 
-[**🌐 Live Demo**](https://ranimelandagan.github.io/raniballs-2d-physics-engine/) &nbsp;·&nbsp; [**🎬 Video Walkthrough**](#-video-demo)
+[**🌐 Live Demo**](https://ranimelandagan.github.io/raniballs-2d-physics-engine/) &nbsp;·&nbsp; [**🎬 Video**](#-video-demo)
 
 </div>
 
 ---
 
-## 🪐 Overview
+## What is this
 
-RaniBalls is a 2D physics playground I built to understand how physics engines actually work, by writing one myself instead of importing one.
+It's a little physics playground. Balls fall, bounce off the walls, smash into each other, and you can fling them around with your mouse. Then it gets out of hand: there's an earthquake button, you can flip gravity, drop a black hole, and blow everything up.
 
-I'm early in my coding journey, so I leaned on AI as a learning tool for this project, mostly for explaining concepts I hadn't met yet and helping me figure out how to approach each step. I wrote, tested, broke, and fixed it myself, and made sure I understood each piece before moving on. The goal was never to copy-paste my way through, it was to actually learn how a physics engine works by building one.
+The main thing I wanted was to actually build the physics myself instead of grabbing a library that does it for me. So all the gravity, the collisions, the bouncing, the throwing, I wrote all of it by hand. No physics engine under the hood. It's all just "move every ball a tiny bit, draw it, repeat 60 times a second."
 
----
-
-## 🛠️ Tech Stack
-
-| Layer | What I used |
-|-------|-------------|
-| **Language** | TypeScript (compiled to JavaScript with `tsc`) |
-| **Rendering** | HTML5 Canvas 2D context |
-| **Animation** | `requestAnimationFrame` game loop |
-| **Sound** | Web Audio API (tones synthesized in code, no audio files) |
-| **Physics** | Written from scratch: vectors, gravity, mass, momentum, collisions |
-| **Dependencies** | None. No engine, no libraries, no framework. |
-| **Hosting** | GitHub Pages |
+It started as one ball bouncing on the floor. Then I kept going "okay, but what if I add..." and didn't stop.
 
 ---
 
-## ✨ Features
+## What's in it
 
-- **Real ball-to-ball collisions** — balls don't just bounce off walls, they collide with *each other*, using conservation of momentum so impacts look believable.
-- **Mass-based physics** — bigger balls are heavier. A large ball shoves a small one around far more than the reverse, because mass is factored into every collision.
-- **Throw to spawn** — click, drag, and release to fling a new ball. The harder you flick, the faster it launches.
-- **Mouse force field** — your cursor becomes a force that pushes or pulls every ball on screen.
-- **Earthquake** — jolts every ball at once and shakes the whole canvas, with a rumble that decays naturally.
-- **Wind & gravity flip** — push everything one direction, or invert gravity so the balls "fall" to the ceiling.
-- **Black hole** — a point that sucks every ball toward it, pulling harder the closer they get.
-- **Explosion** — blast all nearby balls outward from a point, with force that fades over distance.
-- **Slow motion** — a global time-scale toggle that drops the whole simulation into smooth bullet-time.
-- **Collision juice** — balls flash on contact and play a soft synthesized click, louder for harder hits.
-- **Motion trails** — a translucent canvas clear leaves smooth glowing trails behind every ball.
-
----
-
-## 🔨 The Process (How I Built It)
-
-I didn't start with all of this. I started with one ball falling and bouncing off the floor, and built outward one piece at a time.
-
-That order mattered more than I expected:
-
-1. **The loop first.** Before any physics, I got the core cycle working: move, draw, repeat every frame. Everything else hangs off that one rhythm.
-2. **Simple physics by hand.** Gravity as acceleration added to velocity. Walls as "if past the edge, flip the velocity and lose a little energy." Writing this myself is what made the concepts finally click.
-3. **The hard part: balls hitting balls.** Wall collisions are easy. Making balls collide with each other meant real vector math, measuring the distance between centers, detecting overlap, and trading velocity between them. This was the leap from "toy" to "engine."
-4. **Then the chaos.** Once the engine was solid, every new force, earthquake, wind, black hole, explosion, was a variation on the same idea: add an impulse to velocity. The foundation made the fun stuff cheap.
-
-The biggest thing I learned to do here wasn't a formula. It was building in small, testable steps so that when something broke, I knew exactly which piece did it.
+- **Balls that hit each other** — not just the walls. They actually collide and knock each other around.
+- **Mass** — bigger balls are heavier, so they shove the small ones around way more than the other way around.
+- **Throw to spawn** — click, drag, let go. Flick harder and it flies faster.
+- **Mouse force field** — your cursor pushes (or pulls) every ball on screen.
+- **Earthquake** — jolts all the balls and shakes the whole screen, then settles.
+- **Wind and gravity flip** — push everything sideways, or flip gravity so they fall up.
+- **Black hole** — a point that sucks all the balls in, harder the closer they get.
+- **Explosion** — blast everything outward from one spot.
+- **Slow motion** — drops the whole thing into bullet-time.
+- **Little touches** — balls flash and make a click sound when they hit, and they leave glowing trails.
 
 ---
 
-## 📚 What I Learned
+## How I built it
 
-The honest headline lesson: **if you want to make something great, it takes time.** The first bouncing ball took an afternoon. Making a pile of them jostle realistically without overlapping or sticking took a lot longer, and a lot of small fixes.
+I didn't plan all of this out. I built one piece, got it working, then added the next thing.
 
-Some of the technical things that stuck:
+The order kind of mattered, though. First I got the loop going, the move-draw-repeat thing that everything else sits on. Then basic gravity and bouncing off the walls, which was simple enough. The hard part was making the balls hit *each other*. Walls are easy, you just flip the direction. But ball-on-ball needed actual vector math: checking the distance between them, seeing if they overlap, then trading their speed. That's the part that took the longest, and that's where it stopped being a toy and started being a real engine.
 
-- **A physics engine is just arithmetic in a loop.** Position changes by velocity, velocity changes by acceleration. Run it fast enough and it looks alive. There's no magic, just math repeated 60 times a second.
-- **Collisions are vector math.** Detecting a hit is about distance between centers; resolving it is about conserving momentum. Understanding this once unlocked every other feature.
-- **Mass changes everything.** The moment collisions accounted for mass, the whole simulation started *feeling* physical instead of like equal-sized bumper balls.
-- **"Juice" is cheap and worth it.** A color flash and a tiny sound on impact cost almost nothing in code but transform how alive the thing feels.
-- **The Web Audio API can make sound without any files.** You can synthesize a click from raw tones in code, which I had no idea was possible before this.
-- **Build in small steps.** Adding one feature at a time, and checking it works before the next, is the difference between a project you can debug and a mess you can't.
+After that, the rest was kind of easy, because it's all the same trick. Earthquake, wind, black hole, explosion, they're all just "shove the balls in some direction." Once the base was solid, the fun stuff was cheap to add.
+
+The biggest thing I learned wasn't even a formula. It was this: build small, test it, *then* add the next thing. Every time I tried to do too much at once, something broke and I had no idea what.
 
 ---
 
-## 🚀 How It Could Be Improved
+## Real talk (how I actually made this)
 
-Where I'd take it next if I keep going:
+I'm a beginner. I used AI along the way to explain stuff I hadn't learned yet and to help me figure out how to approach each part. But I wrote it, broke it, and fixed it myself, and I made sure I actually understood each piece before moving on. The AI was more like a tutor than autopilot. Building this is literally how I learned how a physics engine works, and that was the whole point.
 
-- **Stacking and resting** — right now a big pile can jitter. Real engines work hard to let objects settle and rest stably, and a simplified version would be a great challenge.
-- **Different shapes** — boxes and placeable walls, which need different collision math than circle-to-circle.
-- **A control panel** — on-screen sliders and buttons for gravity, bounciness, and ball count so anyone can play without knowing the keyboard shortcuts.
-- **Springs and ropes** — connecting balls together for soft-body and chain effects.
-- **Spatial optimization** — a grid or quadtree so collisions stay fast with hundreds of balls instead of checking every pair.
+I'm not going to pretend I did it all from memory. But I get how it works now, and that's what matters to me.
 
 ---
 
-## 🎮 Controls
+## Stuff I'd add later
 
-> ⚠️ **Update these to match the keys you actually set in the code.**
+- **Stacking** — right now a big pile gets a little jittery. Real engines work hard to make stuff settle and rest properly.
+- **Other shapes** — boxes, and walls you can place. They need different collision math than circles.
+- **A control panel** — sliders and buttons so people can mess with gravity and ball count without knowing the keys.
+- **Make it faster with lots of balls** — right now it checks every ball against every other ball, which gets slow. There's a smarter way (a grid) I want to try.
 
-| Action | Control |
-|--------|---------|
-| Spawn / throw a ball | Click + drag + release |
-| Force field | Move / hold the mouse |
-| Earthquake | `Spacebar` |
+---
+
+## Controls
+
+> Heads up: update these to whatever keys I actually set in the code.
+
+| What | How |
+|------|-----|
+| Throw a ball | Click + drag + release |
+| Force field | Move the mouse |
+| Earthquake | `Space` |
 | Wind | `W` |
-| Gravity flip | `G` |
+| Flip gravity | `G` |
 | Black hole | `B` |
 | Explosion | `E` |
-| Slow motion | `S` |
-| Clear all | `C` |
+| Slow-mo | `S` |
+| Clear everything | `C` |
 
 ---
 
-## 💻 How to Run It
+## How to run it
 
-It's a static site. The TypeScript is already compiled to JavaScript, so it runs with no setup:
+It's just a static site. The TypeScript is already compiled to JS, so it runs as-is:
 
 ```bash
-# 1. Clone the repo
 git clone https://github.com/ranimelandagan/raniballs-2d-physics-engine.git
-
-# 2. Open the folder
 cd raniballs-2d-physics-engine
-
-# 3. Open index.html in your browser
+# open index.html in your browser
 ```
 
-For the best experience (and live reloading while editing), use the **Live Server** extension in VS Code.
-
-If you edit the TypeScript, recompile it back to JavaScript with:
-
-```bash
-npx tsc
-```
+The easiest way is the Live Server extension in VS Code. If you edit the TypeScript, recompile it with `npx tsc`.
 
 ---
 
 ## 🎬 Video Demo
 
-<!-- Replace the link below with your video, and drop a thumbnail in an images/ folder -->
+<!-- Swap in your video link and drop a thumbnail in an images/ folder -->
 [![Watch the demo](images/video-thumbnail.png)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
 ---
 
 <div align="center">
 
-**Built by Ranimel B. Andagan**
+**Made by Ranimel B. Andagan**
 
+Part builder, part finance nerd, full-time entrepreneur.
+
+[🌐 Live Demo](https://ranimelandagan.github.io/raniballs-2d-physics-engine/) &nbsp;·&nbsp; [💼 LinkedIn](#) &nbsp;·&nbsp; [📍 North Caloocan, PH]
+
+*No engine. Just math, really fast.*
+
+</div>
 Part builder, part finance nerd, full time entrepreneur!
 
 [🌐 Live Demo](https://ranimelandagan.github.io/raniballs-2d-physics-engine/) &nbsp;·&nbsp; [💼 LinkedIn](#) &nbsp;·&nbsp; [📍 North Caloocan, PH]
