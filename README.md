@@ -49,6 +49,8 @@ It started as one ball bouncing on the floor. Then I kept going "okay, but what 
 
 ## How I built it
 
+I'm a beginner. I used AI along the way to explain stuff I hadn't learned yet and to help me figure out how to approach each part. But I wrote it, broke it, and fixed it myself, and I made sure I actually understood each piece before moving on. The AI was more like a tutor than autopilot. Building this is literally how I learned how a physics engine works, and that was the whole point.
+
 I didn't plan all of this out. I built one piece, got it working, then added the next thing.
 
 The order kind of mattered, though. First I got the loop going, the move-draw-repeat thing that everything else sits on. Then basic gravity and bouncing off the walls, which was simple enough. The hard part was making the balls hit *each other*. Walls are easy, you just flip the direction. But ball-on-ball needed actual vector math: checking the distance between them, seeing if they overlap, then trading their speed. That's the part that took the longest, and that's where it stopped being a toy and started being a real engine.
@@ -56,14 +58,6 @@ The order kind of mattered, though. First I got the loop going, the move-draw-re
 After that, the rest was kind of easy, because it's all the same trick. Earthquake, wind, black hole, explosion, they're all just "shove the balls in some direction." Once the base was solid, the fun stuff was cheap to add.
 
 The biggest thing I learned wasn't even a formula. It was this: build small, test it, *then* add the next thing. Every time I tried to do too much at once, something broke and I had no idea what.
-
----
-
-## Real talk (how I actually made this)
-
-I'm a beginner. I used AI along the way to explain stuff I hadn't learned yet and to help me figure out how to approach each part. But I wrote it, broke it, and fixed it myself, and I made sure I actually understood each piece before moving on. The AI was more like a tutor than autopilot. Building this is literally how I learned how a physics engine works, and that was the whole point.
-
-I'm not going to pretend I did it all from memory. But I get how it works now, and that's what matters to me.
 
 ---
 
