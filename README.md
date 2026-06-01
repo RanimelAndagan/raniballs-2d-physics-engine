@@ -102,8 +102,7 @@ The easiest way is the Live Server extension in VS Code. If you edit the TypeScr
 
 ## 🎬 Video Demo
 
-<!-- Swap in your video link and drop a thumbnail in an images/ folder -->
-[![Watch the demo](images/video-thumbnail.png)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+![RaniBalls demo](cursor/ScreenRecording2026-06-01120731-ezgif.com-gif-maker)
 
 ---
 
