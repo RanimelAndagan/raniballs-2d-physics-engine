@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raniballs Simulator</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* hide the real cursor and draw our own (see #cursor below). doing it this
+       way so the hand doesnt flip to a crosshair near the screen edges */
+    html, body { height: 100%; overflow: hidden; background: #0d0d12; cursor: none; }
+    #scene { display: block; }
+
+    /* the fake cursor. follows the mouse from the script at the bottom */
+    #cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 60px;
+      pointer-events: none;   /* never block clicks */
+      user-select: none;
+      z-index: 10;
+    }
+
+    .hint {
+      position: fixed;
+      top: 18px;
+      left: 20px;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.5);
+      pointer-events: none;   /* let clicks go through to the canvas */
+      user-select: none;
+    }
+    .hint .title {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.22em;
+      font-size: 12px;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .hint .subtitle {
+      display: block;
+      letter-spacing: 0.04em;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 8px;
+    }
+    .hint b { color: #FFD93D; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div class="hint">
+    <span class="title">RANIBALLS SIMULATOR</span>
+    <span class="subtitle">a 2d physics sandbox project</span>
+    <b>Click + drag + release</b> to fling a ball<br />
+    <b>Shift + click</b> for an explosion &nbsp; <b>Hold P</b> to pour<br />
+    <b>W</b> wind &nbsp; <b>F</b> flip wind &nbsp; <b>G</b> flip gravity<br />
+    <b>H</b> black hole &nbsp; <b>X</b> explode at cursor<br />
+    <b>S</b> slow-mo &nbsp; <b>E</b> earthquake &nbsp; <b>C</b> clear
+  </div>
+
+  <!-- our hand cursor. starts off-screen until the mouse moves -->
+  <img id="cursor" src="cursor/hand-cursor.png" alt="" style="transform: translate(-100px, -100px)" />
+
+  <!-- browser runs main.js, not the ts. after editing main.ts run:
+       npx tsc main.ts  to rebuild this -->
+  <script src="main.js"></script>
+
+  <script>
+    // move the fake cursor to follow the mouse.
+    // 12,2 lines the fingertip up with where the click actually lands
+    const handCursor = document.getElementById("cursor");
+    window.addEventListener("mousemove", (e) => {
+      handCursor.style.transform = "translate(" + (e.clientX - 12) + "px, " + (e.clientY - 2) + "px)";
+    });
+  </script>
+</body>
+</html>
