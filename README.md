@@ -2,9 +2,7 @@
 
 # RaniBalls — 2D Physics Engine
 
-### Throw it, shake it, break the gravity.
-
-*A from-scratch 2D physics engine and playground, hand-written in TypeScript on a single HTML canvas. No engine, no libraries. Just math, repeated very fast.*
+### Cool ass, kick ass project
 
 <br>
 
