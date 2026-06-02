@@ -38,7 +38,7 @@ const EXPLOSION_RADIUS    = 260;  // how far the blast reaches (px)
 const SLOWMO_FACTOR  = 0.25; // how slow slow-mo runs. 0.25 = quarter speed (lower = slower)
 const TIMESCALE_EASE = 0.12; // how fast it glides between normal and slow. higher = snappier
 
-const POUR_RATE      = 14;   // balls per second poured while you hold the pour key (P)
+const POUR_RATE      = 100;   // balls per second poured while you hold the pour key (P)
 const MAX_BALLS      = 400;  // hard ceiling on total balls. protects performance
 
 
